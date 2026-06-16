@@ -38,6 +38,6 @@ export class CommercialApiProvider implements VehicleProvider {
     }
 
     const data = (await response.json()) as RawVehicleRecord;
-    return buildVehicleInfo(registrationNumber, data);
+    return buildVehicleInfo(registrationNumber, data, this.name);
   }
 }

@@ -6,16 +6,17 @@ export function vehicleToCsvRow(vehicle: VehicleInfo): string {
     vehicle.manufacturer,
     vehicle.model,
     vehicle.variant,
+    vehicle.color,
     vehicle.fuelType,
     vehicle.vehicleClass,
     vehicle.registrationDate,
     vehicle.engineNumber,
     vehicle.chassisNumber,
-    vehicle.ownerName ?? "N/A",
     vehicle.insuranceStatus,
     vehicle.rcStatus,
     vehicle.fitnessValidity,
     vehicle.vehicleAge,
+    vehicle.source,
   ];
 
   return fields
@@ -29,16 +30,17 @@ export function generateCsv(vehicles: VehicleInfo[]): string {
     "Manufacturer",
     "Model",
     "Variant",
+    "Color",
     "Fuel Type",
     "Vehicle Class",
     "Registration Date",
     "Engine Number",
     "Chassis Number",
-    "Owner Name",
     "Insurance Status",
     "RC Status",
     "Fitness Validity",
     "Vehicle Age",
+    "Source",
   ];
 
   const rows = vehicles.map(vehicleToCsvRow);

@@ -1,5 +1,6 @@
 import { jsPDF } from "jspdf";
 import type { VehicleInfo } from "@/types/vehicle";
+import { SOURCE_LABELS } from "@/lib/vehicle-images";
 
 export function downloadVehiclePdf(vehicle: VehicleInfo) {
   const doc = new jsPDF();
@@ -25,16 +26,17 @@ export function downloadVehiclePdf(vehicle: VehicleInfo) {
     ["Manufacturer", vehicle.manufacturer],
     ["Model", vehicle.model],
     ["Variant", vehicle.variant],
+    ["Color", vehicle.color],
     ["Fuel Type", vehicle.fuelType],
     ["Vehicle Class", vehicle.vehicleClass],
     ["Registration Date", vehicle.registrationDate],
     ["Engine Number", vehicle.engineNumber],
     ["Chassis Number", vehicle.chassisNumber],
-    ["Owner Name", vehicle.ownerName ?? "N/A"],
     ["Insurance Status", vehicle.insuranceStatus],
     ["RC Status", vehicle.rcStatus],
     ["Fitness Validity", vehicle.fitnessValidity],
     ["Vehicle Age", vehicle.vehicleAge],
+    ["Data Source", SOURCE_LABELS[vehicle.source]],
   ];
 
   doc.setFontSize(11);

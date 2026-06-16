@@ -1,5 +1,9 @@
 import type { VehicleInfo } from "@/types/vehicle";
-import type { RawVehicleRecord } from "@/types/provider";
+import type { RawVehicleRecord, VehicleProviderName } from "@/types/provider";
+import {
+  resolveVehicleColor,
+  resolveVehicleImage,
+} from "@/lib/vehicle-images";
 
 export function maskIdentifier(
   value: string,
@@ -33,33 +37,31 @@ export function calculateVehicleAge(registrationDate: string): string {
   return `${years} year${years !== 1 ? "s" : ""}, ${months} month${months !== 1 ? "s" : ""}`;
 }
 
-export function getVehicleImageUrl(manufacturer: string, model: string): string {
-  const query = encodeURIComponent(`${manufacturer} ${model} car`);
-  return `https://source.unsplash.com/800x450/?${query}`;
-}
-
 export function buildVehicleInfo(
   registrationNumber: string,
-  raw: RawVehicleRecord
+  raw: RawVehicleRecord,
+  source: VehicleProviderName
 ): VehicleInfo {
   const manufacturer = raw.manufacturer ?? "Unknown";
   const model = raw.model ?? "Unknown";
+  const color = resolveVehicleColor(registrationNumber, raw.color);
 
   return {
     registrationNumber,
     manufacturer,
     model,
     variant: raw.variant ?? "—",
+    color,
     fuelType: raw.fuelType ?? "—",
     vehicleClass: raw.vehicleClass ?? "—",
     registrationDate: raw.registrationDate ?? "—",
     engineNumber: maskIdentifier(raw.engineNumber ?? "UNKNOWN"),
     chassisNumber: maskIdentifier(raw.chassisNumber ?? "UNKNOWN"),
-    ownerName: raw.ownerName,
     insuranceStatus: raw.insuranceStatus ?? "Unknown",
     rcStatus: raw.rcStatus ?? "Unknown",
     fitnessValidity: raw.fitnessValidity ?? "—",
     vehicleAge: calculateVehicleAge(raw.registrationDate ?? ""),
-    imageUrl: getVehicleImageUrl(manufacturer, model),
+    imageUrl: resolveVehicleImage(manufacturer, model, raw.imageUrl),
+    source,
   };
 }

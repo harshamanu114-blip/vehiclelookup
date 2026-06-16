@@ -1,3 +1,5 @@
+import type { VehicleProviderName } from "@/types/provider";
+
 export interface VehicleSearchRequest {
   registrationNumber: string;
 }
@@ -7,17 +9,18 @@ export interface VehicleInfo {
   manufacturer: string;
   model: string;
   variant: string;
+  color: string;
   fuelType: string;
   vehicleClass: string;
   registrationDate: string;
   engineNumber: string;
   chassisNumber: string;
-  ownerName?: string;
   insuranceStatus: string;
   rcStatus: string;
   fitnessValidity: string;
   vehicleAge: string;
-  imageUrl?: string;
+  imageUrl: string;
+  source: VehicleProviderName;
 }
 
 export interface VehicleSearchResponse {

@@ -105,16 +105,18 @@ npm start
     "manufacturer": "Hyundai",
     "model": "Creta",
     "variant": "SX",
+    "color": "Polar White",
     "fuelType": "Petrol",
     "vehicleClass": "LMV",
     "registrationDate": "2022-03-10",
     "engineNumber": "G4LD********456",
     "chassisNumber": "MALB********456",
-    "ownerName": "R*** K***",
     "insuranceStatus": "Active",
     "rcStatus": "Active",
     "fitnessValidity": "2027-03-10",
-    "vehicleAge": "4 years, 3 months"
+    "vehicleAge": "4 years, 3 months",
+    "imageUrl": "/vehicles/hyundai-creta.svg",
+    "source": "mock"
   }
 }
 ```

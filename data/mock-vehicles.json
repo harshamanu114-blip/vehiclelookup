@@ -4,34 +4,37 @@
       "manufacturer": "Hyundai",
       "model": "Creta",
       "variant": "SX",
+      "color": "Polar White",
       "fuelType": "Petrol",
       "vehicleClass": "LMV",
       "registrationDate": "2022-03-10",
       "engineNumber": "G4LDMU123456",
       "chassisNumber": "MALBM51BLNM123456",
-      "ownerName": "R*** K***",
       "insuranceStatus": "Active",
       "rcStatus": "Active",
-      "fitnessValidity": "2027-03-10"
+      "fitnessValidity": "2027-03-10",
+      "imageUrl": "/vehicles/hyundai-creta.svg"
     },
     "MH12AB1234": {
       "manufacturer": "Maruti Suzuki",
       "model": "Swift",
       "variant": "ZXI",
+      "color": "Pearl Arctic White",
       "fuelType": "Petrol",
       "vehicleClass": "LMV",
       "registrationDate": "2020-08-15",
       "engineNumber": "K12MN4567890",
       "chassisNumber": "MA3ERLF1S0A123456",
-      "ownerName": "A*** S***",
       "insuranceStatus": "Active",
       "rcStatus": "Active",
-      "fitnessValidity": "2026-08-15"
+      "fitnessValidity": "2026-08-15",
+      "imageUrl": "/vehicles/maruti-swift.svg"
     },
     "DL01CA1234": {
       "manufacturer": "Tata",
       "model": "Nexon",
       "variant": "XZ+",
+      "color": "Daytona Grey",
       "fuelType": "Electric",
       "vehicleClass": "LMV",
       "registrationDate": "2023-01-20",
@@ -39,14 +42,15 @@
       "chassisNumber": "MAT6123456789012",
       "insuranceStatus": "Active",
       "rcStatus": "Active",
-      "fitnessValidity": "2028-01-20"
+      "fitnessValidity": "2028-01-20",
+      "imageUrl": "/vehicles/tata-nexon.svg"
     }
   },
   "fallbackManufacturers": [
-    { "manufacturer": "Hyundai", "model": "i20", "variant": "Sportz" },
-    { "manufacturer": "Honda", "model": "City", "variant": "VX" },
-    { "manufacturer": "Toyota", "model": "Innova", "variant": "GX" },
-    { "manufacturer": "Mahindra", "model": "XUV700", "variant": "AX7" },
-    { "manufacturer": "Kia", "model": "Seltos", "variant": "HTX" }
+    { "manufacturer": "Hyundai", "model": "i20", "variant": "Sportz", "color": "Star Dust" },
+    { "manufacturer": "Honda", "model": "City", "variant": "VX", "color": "Platinum White Pearl" },
+    { "manufacturer": "Toyota", "model": "Innova", "variant": "GX", "color": "Super White" },
+    { "manufacturer": "Mahindra", "model": "XUV700", "variant": "AX7", "color": "Deep Forest" },
+    { "manufacturer": "Kia", "model": "Seltos", "variant": "HTX", "color": "Gravity Grey" }
   ]
 }

@@ -7,15 +7,16 @@ export interface RawVehicleRecord {
   manufacturer: string;
   model: string;
   variant?: string;
+  color?: string;
   fuelType?: string;
   vehicleClass?: string;
   registrationDate?: string;
   engineNumber?: string;
   chassisNumber?: string;
-  ownerName?: string;
   insuranceStatus?: string;
   rcStatus?: string;
   fitnessValidity?: string;
+  imageUrl?: string;
 }
 
 export interface VehicleProvider {

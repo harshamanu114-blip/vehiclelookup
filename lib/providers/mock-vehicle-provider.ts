@@ -16,10 +16,14 @@ export class MockVehicleProvider implements VehicleProvider {
   async lookup(registrationNumber: string): Promise<VehicleInfo> {
     const known = database.vehicles[registrationNumber];
     if (known) {
-      return buildVehicleInfo(registrationNumber, known);
+      return buildVehicleInfo(registrationNumber, known, this.name);
     }
 
-    return buildVehicleInfo(registrationNumber, this.generateFallback(registrationNumber));
+    return buildVehicleInfo(
+      registrationNumber,
+      this.generateFallback(registrationNumber),
+      this.name
+    );
   }
 
   private generateFallback(registrationNumber: string): RawVehicleRecord {
@@ -40,7 +44,6 @@ export class MockVehicleProvider implements VehicleProvider {
       registrationDate: `${year}-${month}-${day}`,
       engineNumber: `ENG${hash}${registrationNumber.slice(-4)}`,
       chassisNumber: `CHS${hash}${registrationNumber}`,
-      ownerName: "N/A (Demo data)",
       insuranceStatus: hash % 5 === 0 ? "Expired" : "Active",
       rcStatus: "Active",
       fitnessValidity: `${year + 5}-${month}-${day}`,
